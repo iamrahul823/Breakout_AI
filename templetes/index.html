@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Analytics Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .table-container {
+            width: 100%;
+            margin-bottom: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-container th, .table-container td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .table-container th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .table-container td {
+            background-color: #f8f9fa;
+        }
+        .table-container tr:hover td {
+            background-color: #e9ecef;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Analytics Dashboard</h1>
+        
+        <!-- Stats Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Total Emails Sent</th>
+                        <th>Emails Pending</th>
+                        <th>Emails Scheduled</th>
+                        <th>Emails Failed</th>
+                        <th>Average Response Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- Display individual stats from Flask route -->
+                        <td>{{ stats.total_sent if stats else total_sent }}</td>
+                        <td>{{ stats.total_pending if stats else total_pending }}</td>
+                        <td>{{ stats.total_scheduled if stats else total_scheduled }}</td>
+                        <td>{{ stats.total_failed if stats else total_failed }}</td>
+                        <td>{{ stats.avg_response_rate if stats else avg_response_rate }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
